@@ -1,8 +1,26 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <div className='relative mt-36 lg:mt-44'>
+    <motion.div
+      className='relative mt-36 lg:mt-44'
+      initial='initial'
+      whileInView='animate'
+      variants={{
+        initial: {
+          opacity: 0,
+          y: 100,
+        },
+        animate: () => ({
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 0.05,
+          },
+        }),
+      }}
+    >
       <div className='z-0 -top-12 blur-3xl h-96 w-full rounded-full absolute opacity-40 transition animate-pulse bg-gradient-to-t from-gray-900 via-purple-900 to-violet-900'></div>
       <div className='z-10 relative max-w-7xl border border-neutral-700 bg-neutral-800 rounded-t-xl mx-auto p-12'>
         <div className='max-w-5xl mx-auto flex flex-col-reverse lg:flex-row justify-between items-center'>
@@ -93,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,19 +1,75 @@
 import React from 'react';
 import { CheckIcon, Cross2Icon } from '@radix-ui/react-icons';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Pricing = () => {
   return (
-    <div className='max-w-7xl mx-auto mt-36 lg:mt-48 pt-10 pb-20 text-center relative'>
+    <div
+      id='pricing'
+      className='max-w-7xl mx-auto mt-36 lg:mt-48 pt-10 pb-20 text-center relative'
+    >
       <div className='z-0 blur-3xl h-96 w-full rounded-full absolute opacity-40 transition animate-pulse bg-gradient-to-t from-gray-900 via-purple-900 to-violet-900'></div>
       <div className='relative z-10'>
-        <p className='font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200'>
+        <motion.p
+          className='font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200'
+          initial='initial'
+          whileInView='animate'
+          variants={{
+            initial: {
+              opacity: 0,
+              y: 100,
+            },
+            animate: () => ({
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.05,
+              },
+            }),
+          }}
+        >
           Pricing Plans
-        </p>
-        <h2 className='text-3xl font-bold mt-3 bg-gradient-to-r from-neutral-300 to-stone-400 bg-clip-text text-transparent'>
+        </motion.p>
+        <motion.h2
+          className='text-3xl font-bold mt-3 bg-gradient-to-r from-neutral-300 to-stone-400 bg-clip-text text-transparent'
+          initial='initial'
+          whileInView='animate'
+          variants={{
+            initial: {
+              opacity: 0,
+              y: 100,
+            },
+            animate: () => ({
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.1,
+              },
+            }),
+          }}
+        >
           Flexible Plans and Features
-        </h2>
+        </motion.h2>
         <div className='mt-20 max-w-5xl mx-auto flex flex-col lg:flex-row justify-around items-center lg:items-start'>
-          <div className='bg-neutral-800 rounded-xl p-5 w-72 text-left'>
+          <motion.div
+            className='bg-neutral-800 rounded-xl p-5 w-72 text-left'
+            initial='initial'
+            whileInView='animate'
+            variants={{
+              initial: {
+                opacity: 0,
+                y: 100,
+              },
+              animate: () => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.2,
+                },
+              }),
+            }}
+          >
             <p className='font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200'>
               Solo Hacker
             </p>
@@ -24,9 +80,11 @@ const Pricing = () => {
               Start validating your idea through demographic based user base.
             </p>
             <hr className='my-5 border-neutral-700' />
-            <button className='bg-gray-300 hover:bg-white transition w-full text-sm rounded-full p-2 text-black'>
-              Get Started <span className='text-purple-500'>{'->'}</span>
-            </button>
+            <Link href='/contact'>
+              <button className='bg-gray-300 hover:bg-white transition w-full text-sm rounded-full p-2 text-black'>
+                Get Started <span className='text-purple-500'>{'->'}</span>
+              </button>
+            </Link>
             <hr className='my-5 border-neutral-700' />
             <div className='mt-7'>
               <p className='font-semibold text-sm'>Usage</p>
@@ -74,8 +132,25 @@ const Pricing = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='bg-neutral-800 my-14 lg:my-0 ring ring-offset-8 ring-purple-600 ring-offset-neutral-900 shadow-2xl shadow-purple-500 rounded-xl p-5 w-72 text-left'>
+          </motion.div>
+          <motion.div
+            className='bg-neutral-800 my-14 lg:my-0 ring ring-offset-8 ring-purple-600 ring-offset-neutral-900 shadow-2xl shadow-purple-500 rounded-xl p-5 w-72 text-left'
+            initial='initial'
+            whileInView='animate'
+            variants={{
+              initial: {
+                opacity: 0,
+                y: 100,
+              },
+              animate: () => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.2,
+                },
+              }),
+            }}
+          >
             <p className='font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200'>
               Advanced
             </p>
@@ -87,9 +162,11 @@ const Pricing = () => {
               groups.
             </p>
             <hr className='my-5 border-neutral-700' />
-            <button className='bg-purple-500 hover:bg-purple-700 transition w-full text-sm rounded-full p-2'>
-              Get Started <span className='text-purple-200'>{'->'}</span>
-            </button>
+            <Link href='/contact'>
+              <button className='bg-purple-500 hover:bg-purple-700 transition w-full text-sm rounded-full p-2'>
+                Get Started <span className='text-purple-200'>{'->'}</span>
+              </button>
+            </Link>
             <hr className='my-5 border-neutral-700' />
             <div className='mt-7'>
               <p className='font-semibold text-sm'>Usage</p>
@@ -137,8 +214,25 @@ const Pricing = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='bg-neutral-800 rounded-xl p-5 w-72 text-left'>
+          </motion.div>
+          <motion.div
+            className='bg-neutral-800 rounded-xl p-5 w-72 text-left'
+            initial='initial'
+            whileInView='animate'
+            variants={{
+              initial: {
+                opacity: 0,
+                y: 100,
+              },
+              animate: () => ({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.2,
+                },
+              }),
+            }}
+          >
             <p className='font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-200'>
               Enterprise
             </p>
@@ -149,9 +243,11 @@ const Pricing = () => {
               Start validating your idea through demographic based user base.
             </p>
             <hr className='my-5 border-neutral-700' />
-            <button className='bg-purple-500 hover:bg-purple-700 transition w-full text-sm rounded-full p-2'>
-              Get Started <span className='text-purple-200'>{'->'}</span>
-            </button>
+            <Link href='/contact'>
+              <button className='bg-purple-500 hover:bg-purple-700 transition w-full text-sm rounded-full p-2'>
+                Get Started <span className='text-purple-200'>{'->'}</span>
+              </button>
+            </Link>
             <hr className='my-5 border-neutral-700' />
             <div className='mt-7'>
               <p className='font-semibold text-sm'>Usage</p>
@@ -207,7 +303,7 @@ const Pricing = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

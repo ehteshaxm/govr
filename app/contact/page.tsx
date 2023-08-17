@@ -2,8 +2,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { PaperPlaneIcon, CheckCircledIcon } from '@radix-ui/react-icons';
-import { Select, Input, useToast, Box } from '@chakra-ui/react';
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
+import { Select, Input, useToast } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const toast = useToast();
@@ -12,12 +13,48 @@ const Contact = () => {
     <div className='min-h-screen bg-neutral-900'>
       <Navbar />
       <div className='mt-36 mb-64 px-5 lg:px-0 lg:mt-60 max-w-4xl mx-auto text-center'>
-        <h1 className='text-4xl lg:text-5xl font-bold'>
+        <motion.h1
+          className='text-4xl lg:text-5xl font-bold'
+          initial='initial'
+          whileInView='animate'
+          variants={{
+            initial: {
+              opacity: 0,
+              y: 100,
+            },
+            animate: () => ({
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.05,
+              },
+            }),
+          }}
+        >
           Join the waitlist! <br /> We'll soon be in touch
-        </h1>
-        <div className='max-w-md mx-auto mt-10 text-neutral-500 flex'>
+        </motion.h1>
+        <motion.div
+          className='max-w-md mx-auto mt-10 text-neutral-500 flex'
+          initial='initial'
+          whileInView='animate'
+          variants={{
+            initial: {
+              opacity: 0,
+              y: 100,
+            },
+            animate: () => ({
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.1,
+              },
+            }),
+          }}
+        >
           <Select
+            size={'lg'}
             borderRightRadius={'0'}
+            borderLeftRadius={'100px'}
             placeholder='Category'
             bg='#262626'
             borderColor={'#3f3f46'}
@@ -30,8 +67,10 @@ const Contact = () => {
             <option value='option2'>Testor</option>
           </Select>
           <Input
+            size='lg'
             placeholder='Enter your email'
             borderLeftRadius={'0'}
+            borderRightRadius={'100px'}
             borderColor={'#3f3f46'}
             bg={'#0a0a0a'}
             color='white'
@@ -39,9 +78,26 @@ const Contact = () => {
             fontSize={14}
             focusBorderColor='#a855f7'
           />
-        </div>
+        </motion.div>
 
-        <button className='p-[2px] whitespace-nowrap overflow-hidden relative rounded-full mt-7 shadow-2xl shadow-purple-500 hover:cursor-pointer transition'>
+        <motion.button
+          className='p-[2px] whitespace-nowrap overflow-hidden relative rounded-full mt-7 shadow-2xl shadow-purple-500 hover:cursor-pointer transition'
+          initial='initial'
+          whileInView='animate'
+          variants={{
+            initial: {
+              opacity: 0,
+              y: 100,
+            },
+            animate: () => ({
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.2,
+              },
+            }),
+          }}
+        >
           <div className='absolute animate-spin ease-linear glow h-full w-full bg-[conic-gradient(var(--tw-gradient-stops))] from-neutral-900 via-neutral-900 to-white'></div>
           <div
             className='relative flex items-center justify-between z-10 hover:scale-105 bg-gradient-to-b from-neutral-700 via-neutral-900 to-gray-800 transition p-3 px-5 rounded-full'
@@ -76,7 +132,7 @@ const Contact = () => {
           >
             <p className='mr-2'>Submit</p> <PaperPlaneIcon />
           </div>
-        </button>
+        </motion.button>
       </div>
       <Footer />
     </div>
